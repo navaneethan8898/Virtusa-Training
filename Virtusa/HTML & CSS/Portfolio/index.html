@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Portfolio/style.css">
+    <link rel="stylesheet" href="../Portfolio/all.css">
+    <script>
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+        function opentab(tabname){
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+      </script>
+
+    <script>
+        var sidmenu = document.getElementById("sidmenu");
+        function openmenu(){
+            sidmenu.style.right ="0";
+        }
+        function closemenu(){
+            sidmenu.style.right ="-200px";
+        }
+    </script>
+    <title>PORTFOLIO</title>
+</head>
+<body>
+     <div id="hearder">
+        <div class="contenier">
+            <nav >
+                <img src="https://cdn-icons-png.flaticon.com/512/0/85.png" alt="logo" class="logo">
+                <ul id="sidmenu">
+                    <li><a href="#hearder"><b>Home</b></a></li>
+                    <li><a href="#about"><b>About</b></a></li>
+                    <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+                 </ul>
+                 <i class="fa-solid fa-bars" onclick="openmenu()"></i>
+              </nav> 
+              <div class="hearder-text">
+                <p>Full Stack Developer</p>
+                <h1>Hi, I am <span>Navaneethan</span> <br> form India</h1>
+              </div>
+            </div>
+        </div>
+      <div id="about">
+        <div class="contenier">
+            <div class="row">
+                <div class="about-col-1">
+                  <img src="img/team1.jpg" >  
+                </div>
+                <div class="about-col-2">
+                    <h1 class="sub-title">About Us</h1>
+                   <div class="tab-titles">
+                    <p class="tab-links active-link " onclick="opentab('skills')"><b>Skills</b></p>
+                    <p class="tab-links" onclick="opentab('education')"><b>Education</b></p>
+                   </div>
+                   <div class="tab-contents active-tab" id="skills">
+                    <ul>
+                        <li><span><b>Web Development</b></span><br><b>Web App development</b></li>
+                        <li><span><b>UI / UX</b></span><br><b>Designing Web / App Interface</b></li>
+                        <li><span><b>Java</b></span><br><b>App Development</b></li>
+                    </ul>
+                   </div>
+                   <div class="tab-contents" id="education">
+                    <ul>
+                        <li><span><b>2019-2023</b></span><br><b>KPRIET (CSE) - 84%</b></li>
+                        <li><span><b>2018-2019</b></span><br><b>HSC - 84.6 %</b></li>
+                        <li><span><b>2016-2017</b></span><br><b>SSLC - 93 %</b></li>
+                    </ul>
+                   </div>
+                </div>
+            </div>
+        </div>
+      </div>
+</body>
+</html>
